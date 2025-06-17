@@ -5,7 +5,7 @@ import InputField from "../components/InputField";
 function Register() {
     return (
     <div className="min-h-screen flex items-center justify-center bg-slate-900">
-      <Card>
+      <Card className="w-full max-w-md">
         <h2 className="text-slate-100 text-2xl font-bold mb-6 text-center">회원가입</h2>
         <form>
           <InputField id="email" label="이메일" type="email" placeholder="you@example.com" />
