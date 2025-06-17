@@ -13,6 +13,7 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route path="*" element={<Home />} />
         </Route>
         <Route element={<Layout showHeaderFooter={false} />}>
           <Route path="/login" element={<Login />} />

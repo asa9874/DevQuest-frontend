@@ -1,6 +1,6 @@
-import Button from "../components/Button";
-import Card from "../components/Card";
-import InputField from "../components/InputField";
+import Button from "../components/base/Button";
+import Card from "../components/base/Card";
+import InputField from "../components/base/InputField";
 
 function Login(){
   return (
@@ -10,7 +10,7 @@ function Login(){
         <form>
           <InputField id="email" label="이메일" type="email" placeholder="you@example.com" />
           <InputField id="password" label="비밀번호" type="password" placeholder="••••••••" />
-          <Button type="submit" label="로그인" className="bg-sky-500" />
+          <Button type="submit" label="로그인" className="w-full" />
         </form>
         <div className="text-center mt-4">
           <a href="/register" className="text-sky-400 hover:text-sky-300">회원가입</a>

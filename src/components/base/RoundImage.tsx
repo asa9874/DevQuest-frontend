@@ -1,6 +1,6 @@
 // RoundImage.tsx
 import React from 'react';
-import defaultProfile from "../assets/defaultProfile.jpg";
+import defaultProfile from "../../assets/defaultProfile.jpg";
 
 interface RoundImageProps {
   size?: number;
