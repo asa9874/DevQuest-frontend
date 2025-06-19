@@ -44,6 +44,9 @@ function Login(){
     navigate("/register");
   }
 
+  function handleGoogleLogin() {
+    window.location.href = "http://localhost:8080/oauth2/authorization/google";
+  }
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-900">
       <Card className="w-full max-w-md">
@@ -69,6 +72,12 @@ function Login(){
           <Button type="submit" label="로그인" className="w-full" />
         </form>
         <div className="text-center mt-4">
+          <Button
+            type="button"
+            label="구글로 로그인"
+            className="w-full bg-red-500 hover:bg-red-600"
+            onClick={handleGoogleLogin}
+          />
           <a onClick={navigateToRegister} className="text-sky-400 hover:text-sky-300">회원가입</a>
         </div>
       </Card>

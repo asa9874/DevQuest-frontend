@@ -9,6 +9,7 @@ import MyInfo from './pages/MyInfo';
 import Quest from './pages/Quest';
 import Register from './pages/Register';
 import './styles/index.css';
+import OAuth2Redirect from './pages/OAuth2Redirect';
 
 
 createRoot(document.getElementById('root')!).render(
@@ -26,6 +27,7 @@ createRoot(document.getElementById('root')!).render(
         <Route element={<Layout showHeaderFooter={false} />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/oauth2/redirect" element={<OAuth2Redirect />} />
         </Route>
       </Routes>
     </Router>
