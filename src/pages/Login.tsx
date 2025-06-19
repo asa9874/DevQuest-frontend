@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore";
 import { loginMember } from "../apis/auth";
 import ErrorMessage from "../components/ErrorMessage";
+import { getMyInfo } from "../apis/member";
 
 function Login(){
   const [formData, setFormData] = useState({
@@ -24,17 +25,13 @@ function Login(){
       logout(); 
       const responseData = await loginMember(formData);
       localStorage.setItem("token", responseData.token);
-      //const userData = await getMyInfo();
-      const userData = { //임시
-        id:12345,
-        email:"a",
-        name:"b",
-      }
+      const userData = await getMyInfo();
       setMember({
         id: userData.id,
         email: userData.email,
         name: userData.name,
       });
+      console.log("로그인 성공:", userData);
       navigate("/");
     } catch (err: any) {
       const serverMsg = err.response?.data.split(":").slice(-1).join(":").trim() || "오류";
