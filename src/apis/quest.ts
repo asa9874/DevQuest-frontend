@@ -1,6 +1,7 @@
 import type { QuestWithLikeResponse } from "../types/QuestWithLikeResponse";
 import type { Page } from "../types/Page";
 import apiClient from "./apiClient";
+import type { QuestChallengeResponse } from "../types/QuestChallengeResponse";
 
 export type QuestSearchParams = {
   title?: string;
@@ -21,3 +22,25 @@ export async function SearchQuests(params?: QuestSearchParams): Promise<Page<Que
         throw error;
     }
 }
+
+export async function getQuestChallengesByMemberId(
+  memberId: number,
+  status: string = "IN_PROGRESS",
+  title?: string,
+  page: number = 0,
+  size: number = 10
+): Promise<QuestChallengeResponse[]> {
+  try {
+    const response = await apiClient.get(
+      `/quests/challenges/member/${memberId}`,
+      {
+        params: { status, title, page, size },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
